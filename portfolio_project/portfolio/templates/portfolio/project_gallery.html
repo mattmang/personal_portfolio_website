@@ -30,7 +30,7 @@
         
         <!-- Pagination -->
         {% if projects %}
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-end pagination-container">
             <!-- Previous Button -->
             {% if projects.has_previous %}
                 <a href="?page={{ projects.previous_page_number }}" class="btn btn-outline-primary me-2">Previous</a>

@@ -202,3 +202,19 @@ footer {
     background-color: #0056b3;      /* Darker blue on hover */
     transform: scale(1.05);             /* Slight zoom effect */
 }
+
+/* ----------------- Pagination ----------------- */
+
+.pagination-container {
+    position: fixed;            /* Keeps the pagination container in a fixed position relative to the viewport */
+    bottom: 90px;               /* Adjust the vertical position as needed */
+    right: 330px;
+    z-index: 1000;              /* Ensures it stays on top of other elements */
+    background: #343a40;      /* Adds a background for better visibility */
+    padding: 10px;              /* Adds some padding for aesthetics */
+    border-radius: 5px;         /* Rounds the edges for a cleaner look */
+}
+
+.pagination-container .btn {
+    margin: 0 5px;          /* Ensures consistent spacing between buttons */
+}

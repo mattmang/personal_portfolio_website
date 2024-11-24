@@ -36,7 +36,7 @@
     
         <!-- Pagination -->
         {% if page_obj %}
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-end pagination-container">
             <!-- Previous Button -->
             {% if page_obj.has_previous %}
                 <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-primary me-2">Previous</a>
