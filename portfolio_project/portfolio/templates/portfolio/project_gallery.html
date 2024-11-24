@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="body">
-    <div class="container py-5">
+    <div class="container py-4">
 
         <!-- Project Grid -->
         <div class="row">
@@ -31,13 +31,24 @@
         <!-- Pagination -->
         {% if projects %}
         <div class="d-flex justify-content-center">
-            {% for page_num in page_obj.paginator.page_range %}
-                {% if page_num == page_obj.number %}
-                    <span class="btn btn-primary me-2">{{ page_num }}</span> <!-- Highlight active page -->
+            <!-- Previous Button -->
+            {% if projects.has_previous %}
+                <a href="?page={{ projects.previous_page_number }}" class="btn btn-outline-primary me-2">Previous</a>
+            {% endif %}
+
+            <!-- Page Numbers -->
+            {% for page_num in projects.paginator.page_range %}
+                {% if page_num == projects.number %}
+                    <span class="btn btn-primary me-2">{{ page_num }}</span>
                 {% else %}
                     <a href="?page={{ page_num }}" class="btn btn-outline-primary me-2">{{ page_num }}</a>
                 {% endif %}
             {% endfor %}
+
+            <!-- Next Button -->
+            {% if projects.has_next %}
+                <a href="?page={{ projects.next_page_number }}" class="btn btn-outline-primary ms-2">Next</a>
+            {% endif %}
         </div>
         {% endif %}
     </div>
