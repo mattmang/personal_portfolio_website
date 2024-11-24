@@ -170,26 +170,6 @@ footer {
     object-fit: cover;      /* Crop image if needed */
 }
 
-.card .btn {
-    font-weight: bold;
-    background-color: #007bff;  
-    color: #fff;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
-}
-
-.card .btn:hover {
-    background-color: #0056b3;      
-    transform: scale(1.05);             
-}
-
-.align-right {
-    float: right; /* Moves the button to the right */
-}
-
 /* ----------------- Style for Blog Post Detail Content ----------------- */
 
 .blog-post-detail h1 {
