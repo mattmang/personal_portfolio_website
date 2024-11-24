@@ -29,16 +29,13 @@ router.register(r'blogposts', BlogPostViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),        # Admin site
     path('', include('portfolio.urls')),    # App-level URL configuration
-    path('api/', include(router.urls)),     # Include the API URLs
+    path('api/', include(router.urls)),     # # This will automatically generate the following API endpoints:
 ]
-
-# This will automatically generate the following API endpoints:
-
-# GET /api/blogposts/ - List all blog posts
-# POST /api/blogposts/ - Create a new blog post
-# GET /api/blogposts/{id}/ - Retrieve a specific blog post
-# PUT /api/blogposts/{id}/ - Update a specific blog post
-# DELETE /api/blogposts/{id}/ - Delete a specific blog post
+                                            # GET /api/blogposts/ - List all blog posts
+                                            # POST /api/blogposts/ - Create a new blog post
+                                            # GET /api/blogposts/{id}/ - Retrieve a specific blog post
+                                            # PUT /api/blogposts/{id}/ - Update a specific blog post
+                                            # DELETE /api/blogposts/{id}/ - Delete a specific blog post
 
 # Serve media files in development mode
 if settings.DEBUG:

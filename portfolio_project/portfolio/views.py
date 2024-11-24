@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from rest_framework import viewsets
-from rest_framework.permissions import SAFE_METHODS, IsAuthenticatedOrReadOnly, AllowAny
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
 from .models import Homepage, Project, BlogPost, Contact
 from .forms import ContactForm
 from .serializers import BlogPostSerializer
@@ -73,6 +73,7 @@ def blog_post_detail(request, id):
 class BlogPostViewSet(viewsets.ModelViewSet):       # API endpoint that allows blog posts to be viewed or edited.
     queryset = BlogPost.objects.all().order_by('-date_posted')
     serializer_class = BlogPostSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]  # Allow read-only for unauthenticated users
 
 
 # Contact Form View
