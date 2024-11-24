@@ -6,8 +6,9 @@
         <h1 class="mb-4"></h1>
     
         <!-- Search Bar -->
-        <form method="get" class="mb-4">
-            <input type="text" name="q" class="form-control" placeholder="Search posts..." value="{{ search_query }}">
+        <form method="get" class="mb-4 d-flex">
+            <input type="text" name="q" class="form-control me-2" placeholder="Search posts..." value="{{ search_query }}">
+            <button type="submit" class="btn btn-outline-primary">Search</button>
         </form>
     
         <!-- Blog Post Grid -->
@@ -30,7 +31,7 @@
                 </div>
                 {% endfor %}
             {% else %}
-                <p class="text-center text-muted fs-5 mt-4">Currently, no blog posts are available. Please check back later!</p>
+                <p class="text-center text-white fs-5 mt-4">No results found. Try a different search.</p>
             {% endif %}
         </div>
     
@@ -39,7 +40,7 @@
         <div class="d-flex justify-content-end pagination-container">
             <!-- Previous Button -->
             {% if page_obj.has_previous %}
-                <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-primary me-2">Previous</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-primary me-2" aria-label="Previous Page">Previous</a>
             {% endif %}
 
             <!-- Page Numbers -->
