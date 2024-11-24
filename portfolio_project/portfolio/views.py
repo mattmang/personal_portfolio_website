@@ -70,14 +70,9 @@ def blog_post_detail(request, id):
 
 # Blog Post External API View
 
-class BlogPostViewSet(viewsets.ModelViewSet):
-    queryset = BlogPost.objects.all()
+class BlogPostViewSet(viewsets.ModelViewSet):       # API endpoint that allows blog posts to be viewed or edited.
+    queryset = BlogPost.objects.all().order_by('-date_posted')
     serializer_class = BlogPostSerializer
-
-    def get_permissions(self):
-        if self.request.method in SAFE_METHODS:  # GET, HEAD, OPTIONS
-            return [AllowAny()]
-        return [IsAuthenticatedOrReadOnly()]  # POST, PUT, DELETE restricted to authenticated users
 
 
 # Contact Form View
