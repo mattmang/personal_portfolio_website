@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Homepage Model
 
@@ -14,8 +15,8 @@ class Homepage(models.Model):
 
 class Project(models.Model):
     title = models.CharField(max_length=100)
-    description = models.TextField()
-    image = models.ImageField(upload_to='projects/')
+    description = RichTextField()       # Replacing TextField with RichTextField
+    image = models.ImageField(upload_to='projects/')            # Image upload (mandatory)
     link = models.URLField()
     technologies = models.CharField(max_length=200, blank=True)
 
@@ -27,9 +28,10 @@ class Project(models.Model):
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=200)
-    content = models.TextField()
+    content = RichTextField()       # Replacing TextField with RichTextField
     date_posted = models.DateTimeField(auto_now_add=True)
     category = models.CharField(max_length=50, blank=True)
+    image = models.ImageField(upload_to='blog_images/', blank=True, null=True)      # Image upload (optional)
 
     def __str__(self):
         return self.title

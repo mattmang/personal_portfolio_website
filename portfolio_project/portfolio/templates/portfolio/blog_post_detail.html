@@ -6,10 +6,12 @@
         <div class="md-2 mb-2">
             <h1>{{ post.title }}</h1>
             <br>
-            <p>{{ post.date_posted|date:"j F Y, H:i" }}</p>
-            <br>        
+            <p>{{ post.date_posted|date:"j F Y, H:i" }}</p>  
+            {% if post.image %}
+                <img src="{{ post.image.url }}" class="custom-image-class" alt="{{ post.title }}"/>
+            {% endif %}
             <div class="content blog-post-detail">
-            <p>{{ post.content }}</p>
+            <p>{{ post.content|linebreaks|safe }}</p>        <!-- Display blog content with paragraphing -->
             </div>
             <br>
 
@@ -19,6 +21,8 @@
             <br>
 
             <a href="{% url 'blog_list' %}" class="btn btn-primary">Back to Blog List</a>
+            <br>
+            <br>
         </div>
     </div>
 </div>

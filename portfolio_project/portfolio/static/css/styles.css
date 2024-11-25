@@ -170,6 +170,16 @@ footer {
     object-fit: cover;      /* Crop image if needed */
 }
 
+/* ----------------- Style for Blog Post Detail Image Content ----------------- */
+
+.custom-image-class {
+    border: 2px solid #ddd;
+    padding: 2px;
+    max-width: 40%;
+    display: block;
+    margin: 0 auto;
+}
+
 /* ----------------- Style for Blog Post Detail Content ----------------- */
 
 .blog-post-detail h1 {
@@ -208,7 +218,7 @@ footer {
 .pagination-container {
     position: fixed;            /* Keeps the pagination container in a fixed position relative to the viewport */
     bottom: 90px;               /* Adjust the vertical position as needed */
-    right: 330px;
+    right: 20px;
     z-index: 1000;              /* Ensures it stays on top of other elements */
     background: #343a40;      /* Adds a background for better visibility */
     padding: 10px;              /* Adds some padding for aesthetics */
