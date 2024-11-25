@@ -138,3 +138,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = ''       # Your email address
 EMAIL_HOST_PASSWORD = ''           # Your email password (use an app password for Gmail)
+
+CAPTCHA_IMAGE_SIZE = (300, 50)          # Set the width and height (in pixels)
+CAPTCHA_FONT_SIZE = 50                  # Adjust the font size for the text
+CAPTCHA_BACKGROUND_COLOR = '#f0f0f0'    # Optional: Customize background color
+CAPTCHA_FOREGROUND_COLOR = '#000000'    # Optional: Customize text color
