@@ -86,17 +86,36 @@ def contact(request):
         if form.is_valid():
             form.save()     # Save the submission to the database
             
-            # Send an email notification
-            send_mail(
-                subject=f"New Contact Form Submission from {form.cleaned_data['name']}",
-                message=form.cleaned_data['message'],
-                from_email=form.cleaned_data['email'],
-                recipient_list=[''],  # Replace with your email
-            )
+            # Extract form data
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
 
-            # Display success message
-            messages.success(request, f"Thank you for your message, {form.cleaned_data['name']}! I will get back to you soon.")
-            return redirect('contact')
+            try:
+                # Send an email notification
+                send_mail(
+                    subject=f"New Contact Form Submission from: {name}",
+                    message=f"""
+                    You have received a new message from:
+                    
+                    Name: {name}
+                    Email: {email}
+                    
+                    Message sent:
+                    
+                    {message}
+                    """,
+                    from_email=email,
+                    recipient_list=[''],  # Replace with your email
+                    fail_silently=True,         # You can set to True for production to avoid breaking the app
+                )
+                # Display success message
+                messages.success(request, f"Thank you for your message, {form.cleaned_data['name']}! I will get back to you soon.")
+            except Exception:
+                # Handle email sending failure
+                messages.error(request, 'Failed to send your message. Please try again later.')
+
+            return redirect('contact')  # Redirect to avoid resubmission issues
     else:
         form = ContactForm()
 
