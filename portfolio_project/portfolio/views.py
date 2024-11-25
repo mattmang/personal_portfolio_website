@@ -91,7 +91,7 @@ def contact(request):
                 subject=f"New Contact Form Submission from {form.cleaned_data['name']}",
                 message=form.cleaned_data['message'],
                 from_email=form.cleaned_data['email'],
-                recipient_list=['matthew.mangion85@gmail.com'],  # Replace with your email
+                recipient_list=[''],  # Replace with your email
             )
 
             # Display success message

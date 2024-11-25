@@ -80,8 +80,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'portfolio_db',
-        'USER': 'root',                 # input db username
-        'PASSWORD': 'S3xm@n85',             # input db password
+        'USER': '',                 # input db username
+        'PASSWORD': '',             # input db password
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -136,8 +136,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'matthew.mangion85@gmail.com'       # Your email address
-EMAIL_HOST_PASSWORD = 'adwcujfpxagoxzbr'              # Your email password (use an app password for Gmail)
+EMAIL_HOST_USER = ''       # Your email address
+EMAIL_HOST_PASSWORD = ''              # Your email password (use an app password for Gmail)
 
 CAPTCHA_IMAGE_SIZE = (300, 50)          # Set the width and height (in pixels)
 CAPTCHA_FONT_SIZE = 50                  # Adjust the font size for the text
