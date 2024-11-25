@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'captcha',
     'portfolio',
 ]
 
@@ -130,3 +131,10 @@ STATICFILES_DIRS = [BASE_DIR / 'portfolio/static']
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'matthew.mangion85@gmail.com'       # Your email address
+EMAIL_HOST_PASSWORD = 'xask wqgc tfiw yhtw'           # Your email password (use an app password for Gmail)

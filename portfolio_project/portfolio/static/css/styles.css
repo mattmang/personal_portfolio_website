@@ -27,7 +27,7 @@ header {
 /* Footer Styles */
 footer {
     background-color: #343a40;
-    color: #ffffff; /* White text */
+    color: #ffffff;     /* White text */
     text-align: center;
     padding: 10px 0;
     position: relative;
@@ -143,7 +143,7 @@ footer {
 
 /* Custom style for specific cards */
 .custom-card {
-    background-color: rgb(113, 113, 113);
+    background-color: #717171;
     color: white;
     border: none;
     border-radius: 25px;
@@ -217,4 +217,72 @@ footer {
 
 .pagination-container .btn {
     margin: 0 5px;          /* Ensures consistent spacing between buttons */
+}
+
+/* ----------------- Contact Form Styling ----------------- */
+.custom-form {
+    max-width: 100%;        /* Ensures responsiveness */
+    width: 100%;            /* Fills its parent container */
+    max-height: 100%;
+    height: 60%;
+    font-size: 1.0rem;      /* Reduce font size */
+}
+
+.custom-form-bg-color {
+    background-color: #343a40;  /* Custom background color */
+    color: white;               /* Ensure text color contrasts well */
+    
+}
+
+.custom-form input,
+.custom-form textarea {
+    padding: 5px 10px;      /* Reduce input field height */
+    font-size: 1.0rem;      /* Adjust font size */
+    height: 50px;           /* Set specific input height */
+    border-radius: 5px;
+    border: none;
+}
+
+.custom-form textarea {
+    height: 80px;           /* Reduce height for textarea */
+    resize: none;           /* Disable manual resizing */
+}
+
+.custom-form {
+    padding: 20px;          /* Reduced padding around the form */
+}
+
+.custom-form .btn {
+    font-weight: bold;
+    font-size: 0.9rem;
+    background-color: #007bff;  /* Bootstrap primary color */
+    color: #fff;
+    padding: 8px 15px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+.custom-form .btn:hover {
+    background-color: #0056b3;      /* Darker blue on hover */
+    transform: scale(1.05);             /* Slight zoom effect */
+}
+
+.custom-form .captcha {
+    font-size: 1.0rem;          /* Enlarge the CAPTCHA font */
+    font-weight: bold;          /* Make it bold for better visibility */
+    color: #ffffff;         /* White text for dark backgrounds */
+    letter-spacing: 2px;        /* Add spacing between characters */
+}
+
+.custom-form .captcha img {
+    width: 50px;                /* Ensure the CAPTCHA image scales well */
+    height: 200px;               /* Enlarge the image if needed */
+    margin-bottom: 10px;        /* Add space below the image */
+}
+
+.custom-form .captcha input {
+    font-size: 1rem;            /* Adjust input field font size */
+    padding: 8px;               /* Add padding for better usability */
 }

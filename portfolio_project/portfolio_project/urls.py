@@ -27,9 +27,10 @@ router.register(r'blogposts', BlogPostViewSet)
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),        # Admin site
-    path('', include('portfolio.urls')),    # App-level URL configuration
-    path('api/', include(router.urls)),     # # This will automatically generate the following API endpoints:
+    path('admin/', admin.site.urls),            # Admin site
+    path('', include('portfolio.urls')),        # App-level URL configuration
+    path('captcha/', include('captcha.urls')),  # Contact Form Captcha
+    path('api/', include(router.urls)),         # This will automatically generate the following API endpoints:
 ]
                                             # GET /api/blogposts/ - List all blog posts
                                             # POST /api/blogposts/ - Create a new blog post

@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
+from django.core.mail import send_mail
+from django.contrib import messages
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
 from .models import Homepage, Project, BlogPost, Contact
@@ -82,11 +84,20 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('contact_success')
+            form.save()     # Save the submission to the database
+            
+            # Send an email notification
+            send_mail(
+                subject=f"New Contact Form Submission from {form.cleaned_data['name']}",
+                message=form.cleaned_data['message'],
+                from_email=form.cleaned_data['email'],
+                recipient_list=['matthew.mangion85@gmail.com'],  # Replace with your email
+            )
+
+            # Display success message
+            messages.success(request, 'Thank you for your message! I will get back to you soon.')
+            return redirect('portfolio/contact.html')  # Replace 'contact' with the name of your contact URL pattern
     else:
         form = ContactForm()
-    return render(request, 'portfolio/contact.html', {'form': form})
 
-def contact_success(request):
-    return render(request, 'portfolio/contact_success.html')
+    return render(request, 'portfolio/contact.html', {'form': form})

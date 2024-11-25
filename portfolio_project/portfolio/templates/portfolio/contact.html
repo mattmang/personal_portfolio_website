@@ -1,10 +1,44 @@
 {% extends 'portfolio/base.html' %}
 
+{{ form.captcha }}
 {% block content %}
-<h1>Contact Me</h1>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Send</button>
-</form>
+<div class="custom-form">
+    <div class="container py-5 text center">
+        <h2 class="mb-4 text-white">Contact Me</h2>
+        <p class="lead text-white-50 mb-4">Feel free to send me a message using the form below.</p>
+        <br>
+    
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <form method="post" novalidate class="custom-form-bg-color p-4 rounded custom-form">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    
+                    <!-- Render the form fields -->
+                    {% for field in form %}
+                    <div class="mb-3">
+                        <label for="{{ field.id_for_label }}" class="form-label text-white">{{ field.label }}</label>
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                    {% endfor %}
+                    
+                    <!-- Button -->
+                    <button type="submit" class="btn btn-primary btn-lg w-100 mt-3">Send Message</button>
+                </form>
+    
+                <!-- Display messages -->
+                {% if messages %}
+                <div class="mt-4">
+                    {% for message in messages %}
+                    <div class="alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
