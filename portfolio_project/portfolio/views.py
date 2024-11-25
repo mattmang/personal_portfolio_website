@@ -95,8 +95,8 @@ def contact(request):
             )
 
             # Display success message
-            messages.success(request, 'Thank you for your message! I will get back to you soon.')
-            return redirect('portfolio/contact.html')  # Replace 'contact' with the name of your contact URL pattern
+            messages.success(request, f"Thank you for your message, {form.cleaned_data['name']}! I will get back to you soon.")
+            return redirect('contact')
     else:
         form = ContactForm()
 

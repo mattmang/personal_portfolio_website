@@ -273,3 +273,19 @@ footer {
     font-size: 0.9rem;              /* Optional: Adjust the font size */
     margin-top: 0.25rem;            /* Add spacing if required */
 }
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alert-success .btn-close {
+    color: #155724;
+    opacity: 0.8;
+}
