@@ -1,8 +1,10 @@
 /* General Styles */
-.container {
-    margin-top: -80px;
-    padding-top: 10px;
-    margin-bottom: -120px;
+
+main.container {
+    display: flex;
+    flex-direction: column;     /* Stack children vertically */
+    align-items: center;        /* Center align all children horizontally */
+    justify-content: center;    /* Optional: Use to center content vertically in the block */
 }
 
 body {
@@ -95,6 +97,12 @@ footer {
 
 /* ----------------- Style for Home page Content ----------------- */
 
+.homepage-content .container {
+    margin-top: -80px;
+    padding-top: 10px;
+    margin-bottom: -120px;
+}
+
 .homepage-content h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
@@ -127,11 +135,12 @@ footer {
 
 /* Ensure image and text alignment is consistent */
 .homepage-content img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
-    display: block;
+    display: flex;
     margin: 0 auto;
 }
+
 
 /* ----------------- Style for Project & Blog Cards ----------------- */
 
@@ -144,6 +153,8 @@ footer {
     transform: scale(0.9);              /* Shrinks the card to 90% of its size */
     transition: transform 0.3s ease;    /* Smooth scaling */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+    height: 100%;
+    width: 100%;
 }
 
 .card:hover {
@@ -160,7 +171,7 @@ footer {
 }
 
 .card-img-top {
-    height: 100px;          /* Reduce image height */
+    height: 200px;          /* Reduce image height */
     object-fit: cover;      /* Crop image if needed */
 }
 
@@ -209,18 +220,23 @@ footer {
 
 /* ----------------- Pagination ----------------- */
 
-.pagination-container {
-    position: fixed;            /* Keeps the pagination container in a fixed position relative to the viewport */
-    bottom: 80px;               /* Adjust the vertical position as needed */
-    right: 330px;
-    z-index: 1000;              /* Ensures it stays on top of other elements */
-    background: #343a40;      /* Adds a background for better visibility */
-    padding: 10px;              /* Adds some padding for aesthetics */
-    border-radius: 5px;         /* Rounds the edges for a cleaner look */
+.pagination-container-center {
+    display: flex;
+    justify-content: center;        /* Horizontally center the pagination */
+    align-items: center;            /* Vertically align in the center of the block */
+    min-height: 100%;               /* Adjust as needed to provide enough spacing */
+    margin-top: 40px;               /* Optional: Add spacing above the pagination */
 }
 
-.pagination-container .btn {
-    margin: 0 5px;          /* Ensures consistent spacing between buttons */
+.pagination-container-center a,
+.pagination-container-center span {
+    margin: 0 5px;  /* Add spacing between pagination buttons */
+}
+
+@media (max-width: 768px) {
+    .pagination-container-fixed .container {
+        justify-content: center; /* Center align for smaller screens */
+    }
 }
 
 /* ----------------- Contact Form Styling ----------------- */
@@ -311,6 +327,6 @@ footer {
 }
 
 .social-icon:hover {
-    color: #0056b3;             /* Hover color */
+    color: #6c757d;             /* Hover color */
     text-decoration: none;      /* No underline */
 }

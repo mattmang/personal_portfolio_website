@@ -21,7 +21,7 @@ def home(request):
 
 def project_gallery(request):
     projects = Project.objects.all()
-    paginator = Paginator(projects, 6)  # Display 6 projects per page
+    paginator = Paginator(projects, 4)  # Display 4 projects per page
     page_number = request.GET.get('page')
     try:
         page_obj = paginator.page(page_number)
@@ -45,7 +45,7 @@ def blog_list(request):
     if search_query:
         posts = posts.filter(Q(title__icontains=search_query) | Q(content__icontains=search_query))
 
-    paginator = Paginator(posts, 6)  # Show 6 posts per page
+    paginator = Paginator(posts, 3)  # Show 3 posts per page
     page_number = request.GET.get('page', 1)
     try:
         page_obj = paginator.page(page_number)
