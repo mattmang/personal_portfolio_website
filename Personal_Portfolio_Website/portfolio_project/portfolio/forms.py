@@ -16,9 +16,9 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = ['name', 'email', 'message','captcha']
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Name', 'style': 'width: 100%; height: 40px;'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your Email', 'style': 'width: 100%; height: 40px;'}),
-            'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Your Message', 'style': 'width: 100%; height: 100px;'}),
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Name', 'style': 'width: 100%; height: 35px;'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your Email', 'style': 'width: 100%; height: 35px;'}),
+            'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Your Message', 'style': 'width: 100%; height: 70px;'}),
         }
 
 class CommentForm(forms.ModelForm):

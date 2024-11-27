@@ -268,7 +268,7 @@ footer {
 }
 
 .custom-form {
-    padding: 5px;          /* Reduced padding around the form */
+    padding: 0px;          /* Reduced padding around the form */
 }
 
 .custom-form-bg-color {
