@@ -1,0 +1,51 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="homepage-content">
+    <div class="container py-2">
+        <div class="row align-items-center justify-content-center">
+            <!-- Left Column: Image -->
+            <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                <img src="{% static 'images/sample_photo.png' %}" alt="Sample Image" class="img-fluid rounded">
+            </div>
+    
+            <!-- Right Column: Text -->
+            <div class="col-lg-6 col-md-6">
+                <h1>Welcome to My Portfolio!</h1>
+                <br>
+                <p>
+                    I'm Matthew Mangion, a passionate IT professional. Explore my projects, 
+                    blog, and get in touch for collaboration opportunities.
+                </p>
+                <p>
+                    With a focus on Python, Flask, Django, Django REST Framework, HTML, CSS and Bootstrap technologies 
+                    I've worked on numerous exciting projects showcasing my skills and dedication.
+                </p>
+                <br>
+                <div class="d-flex justify-content-center mb-5">
+                    <a href="{% url 'project_gallery' %}" class="btn btn-primary me-4">Explore My Projects</a>
+                    <a href="{% static 'resume.pdf' %}" target="_blank" class="btn btn-primary">Download Resume</a>
+                </div>
+                <br>
+
+                <!-- Social Media Icons -->
+                <div class="social-media-links d-flex justify-content-center mt-0">
+                    <a href="https://www.linkedin.com/in/matthewmangion/" target="_blank" class="social-icon me-4">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/mattmang" target="_blank" class="social-icon me-4">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://x.com/MatMangion" target="_blank" class="social-icon me-4">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/mangionmatthew/" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
