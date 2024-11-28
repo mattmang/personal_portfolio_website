@@ -105,7 +105,7 @@ This project is licensed under the MIT License. See `LICENSE` for details.
 
 ## Contact
 For any inquiries or feedback, please email:
-- **Email:** [matthew.mangion85@gmail.com](mailto:matthew.mangion85@gmail.com)
+- **Email:** [matthew.mangion@gmail.com](mailto:matthew.mangion@gmail.com)
 
 ---
 
