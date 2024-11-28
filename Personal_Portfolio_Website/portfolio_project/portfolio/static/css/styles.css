@@ -268,7 +268,11 @@ footer {
 }
 
 .custom-form {
-    padding: 0px;          /* Reduced padding around the form */
+    padding: 5px;          /* Reduced padding around the form */
+}
+
+.custom-form label {
+    font-weight: bold;                  /* Makes labels stand out */
 }
 
 .custom-form-bg-color {
@@ -329,4 +333,34 @@ footer {
 .social-icon:hover {
     color: #6c757d;             /* Hover color */
     text-decoration: none;      /* No underline */
+}
+
+/* ----------------- Styling for Comment Board ----------------- */
+
+.comment-board-container {
+    display: flex;
+    justify-content: left;          /* Align content to the left */
+    padding: 10px;                  /* Add some padding for spacing */
+}
+
+.comment-board-container .row {
+    width: 100%;            /* Ensures the row spans the full width */
+    margin-left: 0;         /* Ensures no extra spacing on the left */
+}
+
+.comment-board-container .custom-form {
+    background-color: #343a40;            /* Background color for the form */
+    padding: 5px;                           /* Add padding inside the form */
+    border-radius: 8px;                     /* Round corners */
+}
+
+.comment-board-container label {
+    font-weight: bold;                  /* Makes labels stand out */
+}
+
+.comment-board-container textarea,
+.comment-board-container input {
+    width: 100%;                        /* Makes input and textarea fields full-width */
+    color: #fff; /* Input text color */
+    opacity: 1; /* Ensure placeholder text is visible (default might be lower) */
 }
