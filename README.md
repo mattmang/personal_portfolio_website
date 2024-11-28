@@ -46,23 +46,24 @@ This is a Django-based project to create a dynamic **Personal Portfolio Website*
 ### Steps
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/portfolio-website.git
-    cd portfolio-website
+    git clone https://github.com/mattmang/personal_portfolio_website.git
+    cd personal_portfolio_website
+    cd portfolio_project
     ```
-
-2. Create a virtual environment:
+2. Install the following packages:
+    ```bash
+    pip install django djangorestframework mysqlclient django-ckeditor-5 captcha django-simple-captcha
+    ```
+   
+3. Create a virtual environment (optional):
     ```bash
     virtualenv env
     source env/bin/activate  # On Windows: env\Scripts\activate
     ```
 
-3. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
 4. Configure the database:
-    - Update `settings.py` with your database credentials (see `Project_credentials.txt` for example configuration).
+    - Create MySQL database "portfolio_db".
+    - Update `settings.py` with your database credentials (`settings.py` Lines 85 & 86).
     - Run migrations:
       ```bash
       python manage.py makemigrations
@@ -70,7 +71,8 @@ This is a Django-based project to create a dynamic **Personal Portfolio Website*
       ```
 
 5. Configure email settings:
-    - Add SMTP credentials to `settings.py` for sending contact form submissions.
+    - Add SMTP credentials to `settings.py` for sending contact form submissions (`settings.py` Lines 142 & 143). Host is already set for Gmail. Needs updating if using a different mail client.
+    - Populate [recipient_list] in `views.py` (Line 136) with the email address/es which will be receiving contact form submissions.
 
 6. Run the server:
     ```bash
@@ -81,6 +83,11 @@ This is a Django-based project to create a dynamic **Personal Portfolio Website*
     ```
     http://127.0.0.1:8000
     ```
+
+8. Create a superuser to manage and control the website:
+   ```bash
+    python manage.py createsuperuser
+    ```   
 
 ---
 
@@ -98,14 +105,9 @@ For deployment, consider platforms like **Heroku**, **PythonAnywhere**, or **Dig
 
 ---
 
-## License
-This project is licensed under the MIT License. See `LICENSE` for details.
-
----
-
 ## Contact
 For any inquiries or feedback, please email:
-- **Email:** [matthew.mangion85@gmail.com](mailto:matthew.mangion85@gmail.com)
+- **Email:** [matthew.mangion@gmail.com](mailto:matthew.mangion@gmail.com)
 
 ---
 
