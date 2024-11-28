@@ -62,7 +62,7 @@ This is a Django-based project to create a dynamic **Personal Portfolio Website*
     ```
 
 4. Configure the database:
-    - Create MySQL database "portfolio_db".
+    - Download the MySQL database `sample_portfolio_database` from this repo and import to DBeaver or create a new MySQL database `portfolio_db` to start a new portfolio website from scratch.
     - Update `settings.py` with your database credentials (`settings.py` Lines 85 & 86).
     - Run migrations:
       ```bash
