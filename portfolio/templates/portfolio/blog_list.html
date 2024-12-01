@@ -1,0 +1,68 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<div class="body">
+    <div class="container py-1">
+
+        <!-- Search Bar -->
+        <form method="get" class="mt-0 mb-3 d-flex">
+            <input type="text" name="q" class="form-control me-2" placeholder="Search posts..." value="{{ search_query }}">
+            <button type="submit" class="btn btn-outline-primary">Search</button>
+        </form>
+    
+        <!-- Blog Post Grid -->
+        <div class="row">
+            {% if page_obj %}
+                {% for post in page_obj %}
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-2">
+                    <a href="{% url 'blog_post_detail' post.id %}" class="text-decoration-none">
+                        <div class="card custom-card">
+                            {% if post.image %}
+                                <img src="{{ post.image.url }}" class="card-img-top" style = "object-fit: cover" alt="{{ post.title }}"/>
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title"><strong>{{ post.title|truncatechars:37 }}</strong></h5>
+                                <p class="card-text">{{ post.content|safe|truncatechars:80 }}</p>
+                                {% if post.category %}
+                                <p><strong>Categories: </strong>{{ post.category|truncatechars:30 }}</p>
+                                {% endif %}
+                                <p class="text-muted">{{ post.date_posted|date:"j F Y, H:i" }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p class="text-center text-white fs-5 mt-4">No results found. Try a different search.</p>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+        
+<!-- Fixed Pagination -->
+{% if page_obj %}
+<div class="pagination-container-fixed">
+    <div class="d-flex justify-content-end pagination-container">
+        <!-- Previous Button -->
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-primary me-2">Previous</a>
+        {% endif %}
+
+        <!-- Page Numbers -->
+        {% for page_num in page_obj.paginator.page_range %}
+            {% if page_num == page_obj.number %}
+                <span class="btn btn-primary me-2">{{ page_num }}</span>
+            {% else %}
+                <a href="?page={{ page_num }}" class="btn btn-outline-primary me-2">{{ page_num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        <!-- Next Button -->
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-primary ms-2">Next</a>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+{% endblock %}
