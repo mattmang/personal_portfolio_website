@@ -9,6 +9,7 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
 from .models import Homepage, Project, BlogPost, Contact, Comment
 from .forms import ContactForm, CommentForm
 from .serializers import BlogPostSerializer
+from decouple import config
 
 
 # Project Homepage View
@@ -133,7 +134,7 @@ def contact(request):
                     {message}
                     """,
                     from_email=email,
-                    recipient_list=[''],  # Replace with your email
+                    recipient_list=[config('EMAIL_HOST_USER')],     # Replace with your email
                     fail_silently=True,         # You can set to True for production to avoid breaking the app
                 )
                 # Display success message
