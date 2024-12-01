@@ -2,6 +2,9 @@
 
 This is a Django-based project to create a dynamic **Personal Portfolio Website** that showcases your skills, achievements, projects, and technical content. The project includes features like project galleries, a blog section, a contact form, and a downloadable resume.
 
+**[Live Application on Heroku](https://personal-portfolio-website-b49244050bcc.herokuapp.com/)**  
+Visit the deployed version of this portfolio website on Heroku to explore its features live.
+
 ---
 
 ## Features
@@ -47,7 +50,6 @@ This is a Django-based project to create a dynamic **Personal Portfolio Website*
 1. Clone the repository:
     ```bash
     git clone https://github.com/mattmang/personal_portfolio_website.git
-    cd personal_portfolio_website
     cd portfolio_project
     ```
 2. Install the following packages:
