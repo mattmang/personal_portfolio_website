@@ -50,7 +50,6 @@ Visit the deployed version of this portfolio website on Heroku to explore its fe
 1. Clone the repository:
     ```bash
     git clone https://github.com/mattmang/personal_portfolio_website.git
-    cd portfolio_project
     ```
 2. Install the following packages:
     ```bash
